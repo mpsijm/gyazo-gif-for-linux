@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+filename=/tmp/`date +%s%N`.gif
+rectangle=`byzanz-get-rect`
+[[ "$rectangle" != "" ]] && byzanz-record $rectangle $filename $@ && gyazo $filename && rm $filename
